@@ -2,7 +2,7 @@
 Name: libxv
 Summary:  The Xv Library
 Version: 1.0.4
-Release: %mkrel 1
+Release: %mkrel 2
 Group: Development/X11
 License: MIT
 URL: http://xorg.freedesktop.org
