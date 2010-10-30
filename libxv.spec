@@ -1,7 +1,7 @@
 %define libxv %mklibname xv 1
 Name: libxv
 Summary:  The Xv Library
-Version: 1.0.5
+Version: 1.0.6
 Release: %mkrel 1
 Group: Development/X11
 License: MIT
