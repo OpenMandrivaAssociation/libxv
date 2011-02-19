@@ -46,7 +46,7 @@ Requires: %{libname} = %{version}-%{release}
 Requires: x11-proto-devel >= 1.0.0
 Provides: libxv-devel = %{version}-%{release}
 Provides: libxv1-devel = %{version}-%{release}
-Obsoletes: %{%mklibname xv 1 -d}
+Obsoletes: %{mklibname xv 1 -d}
 
 Conflicts: libxorg-x11-devel < 7.0
 
@@ -74,7 +74,7 @@ Group: Development/X11
 Requires: %{develname} = %{version}-%{release}
 Provides: libxv-static-devel = %{version}-%{release}
 Provides: libxv1-static-devel = %{version}-%{release}
-Obsoletes: %{%mklibname xv 1 -s -d}
+Obsoletes: %{mklibname xv 1 -s -d}
 
 Conflicts: libxorg-x11-static-devel < 7.0
 
