@@ -1,8 +1,11 @@
-%define libxv %mklibname xv 1
+%define libname %mklibname xv 1
+%define develname %mklibname xv -d
+%define staticname %mklibname xv -s -d
+
 Name: libxv
 Summary:  The Xv Library
 Version: 1.0.6
-Release: %mkrel 1
+Release: %mkrel 2
 Group: Development/X11
 License: MIT
 URL: http://xorg.freedesktop.org
@@ -21,39 +24,41 @@ display's video resources.
 
 #-----------------------------------------------------------
 
-%package -n %{libxv}
+%package -n %{libname}
 Summary:  The Xv Library
 Group: Development/X11
 Conflicts: libxorg-x11 < 7.0
 Conflicts: XFree86-compat-libs <= 4.1.0
 Provides: %{name} = %{version}
 
-%description -n %{libxv}
+%description -n %{libname}
 The  Xv  extension provides support for video adaptors attached to an X
 display. Clients use Xv to gain access and manage sharing of a
 display's video resources.
 
 #-----------------------------------------------------------
 
-%package -n %{libxv}-devel
+%package -n %{develname}
 Summary: Development files for %{name}
 Group: Development/X11
 
-Requires: %{libxv} = %{version}
+Requires: %{libname} = %{version}-%{release}
 Requires: x11-proto-devel >= 1.0.0
 Provides: libxv-devel = %{version}-%{release}
+Provides: libxv1-devel = %{version}-%{release}
+Obsoletes: %{%mklibname xv 1 -d}
 
 Conflicts: libxorg-x11-devel < 7.0
 
-%description -n %{libxv}-devel
+%description -n %{develname}
 Development files for %{name}
 
-%pre -n %{libxv}-devel
+%pre -n %{develname}
 if [ -h %{_includedir}/X11 ]; then
 	rm -f %{_includedir}/X11
 fi
 
-%files -n %{libxv}-devel
+%files -n %{develname}
 %defattr(-,root,root)
 %{_libdir}/libXv.so
 %{_libdir}/libXv.la
@@ -63,18 +68,20 @@ fi
 
 #-----------------------------------------------------------
 
-%package -n %{libxv}-static-devel
+%package -n %{staticname}
 Summary: Static development files for %{name}
 Group: Development/X11
-Requires: %{libxv}-devel = %{version}
+Requires: %{develname} = %{version}-%{release}
 Provides: libxv-static-devel = %{version}-%{release}
+Provides: libxv1-static-devel = %{version}-%{release}
+Obsoletes: %{%mklibname xv 1 -s -d}
 
 Conflicts: libxorg-x11-static-devel < 7.0
 
-%description -n %{libxv}-static-devel
+%description -n %{staticname}
 Static development files for %{name}
 
-%files -n %{libxv}-static-devel
+%files -n %{staticname}
 %defattr(-,root,root)
 %{_libdir}/libXv.a
 
@@ -103,7 +110,7 @@ rm -rf %{buildroot}
 %postun -p /sbin/ldconfig
 %endif
 
-%files -n %{libxv}
+%files -n %{libname}
 %defattr(-,root,root)
 %{_libdir}/libXv.so.1
 %{_libdir}/libXv.so.1.0.0
