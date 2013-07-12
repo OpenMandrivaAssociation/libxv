@@ -12,8 +12,8 @@ Url:		http://xorg.freedesktop.org
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/libXv-%{version}.tar.bz2
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(xext)
-BuildRequires:	x11-proto-devel >= 1.0.0
-BuildRequires:	x11-util-macros >= 1.0.1
+BuildRequires:	pkgconfig(xorg-macros)
+BuildRequires:	pkgconfig(xproto)
 
 %description
 The  Xv  extension provides support for video adaptors attached to an X
@@ -33,8 +33,6 @@ display's video resources.
 Summary:	Development files for %{name}
 Group:		Development/X11
 Requires:	%{libname} = %{version}-%{release}
-Obsoletes:	%{_lib}xv1-devel < 1.0.7
-Obsoletes:	%{_lib}xv-static-devel < 1.0.7
 
 %description -n %{devname}
 Development files for %{name}.
@@ -61,5 +59,4 @@ Development files for %{name}.
 %{_libdir}/pkgconfig/xv.pc
 %{_includedir}/X11/extensions/Xvlib.h
 %{_mandir}/man3/Xv*
-
 
