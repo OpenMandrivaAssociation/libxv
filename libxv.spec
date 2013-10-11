@@ -4,7 +4,7 @@
 
 Summary:	The Xv Library
 Name:		libxv
-Version:	1.0.9
+Version:	1.0.10
 Release:	1
 License:	MIT
 Group:		Development/X11
