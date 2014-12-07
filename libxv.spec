@@ -5,7 +5,7 @@
 Summary:	The Xv Library
 Name:		libxv
 Version:	1.0.10
-Release:	7
+Release:	8
 License:	MIT
 Group:		Development/X11
 Url:		http://xorg.freedesktop.org
