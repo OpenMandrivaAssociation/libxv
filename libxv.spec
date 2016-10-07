@@ -4,8 +4,8 @@
 
 Summary:	The Xv Library
 Name:		libxv
-Version:	1.0.10
-Release:	11
+Version:	1.0.11
+Release:	1
 License:	MIT
 Group:		Development/X11
 Url:		http://xorg.freedesktop.org
@@ -41,7 +41,7 @@ Development files for %{name}.
 %setup -qn libXv-%{version}
 
 %build
-%configure2_5x \
+%configure \
 	--disable-static \
 	--x-includes=%{_includedir} \
 	--x-libraries=%{_libdir}
