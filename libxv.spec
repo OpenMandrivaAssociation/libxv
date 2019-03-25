@@ -38,7 +38,7 @@ Requires:	%{libname} = %{version}-%{release}
 Development files for %{name}.
 
 %prep
-%setup -qn libXv-%{version}
+%autosetup -n libXv-%{version} -p1
 
 %build
 %configure \
@@ -46,10 +46,10 @@ Development files for %{name}.
 	--x-includes=%{_includedir} \
 	--x-libraries=%{_libdir}
 
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %files -n %{libname}
 %{_libdir}/libXv.so.%{major}*
