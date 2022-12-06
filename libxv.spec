@@ -13,12 +13,12 @@
 
 Summary:	The Xv Library
 Name:		libxv
-Version:	1.0.11
-Release:	5
+Version:	1.0.12
+Release:	1
 License:	MIT
 Group:		Development/X11
 Url:		http://xorg.freedesktop.org
-Source0:	http://xorg.freedesktop.org/releases/individual/lib/libXv-%{version}.tar.bz2
+Source0:	http://xorg.freedesktop.org/releases/individual/lib/libXv-%{version}.tar.xz
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(xext)
 BuildRequires:	pkgconfig(xorg-macros)
@@ -107,7 +107,7 @@ cd build
 %{_libdir}/libXv.so
 %{_libdir}/pkgconfig/xv.pc
 %{_includedir}/X11/extensions/Xvlib.h
-%{_mandir}/man3/Xv*
+%doc %{_mandir}/man3/Xv*
 
 %if %{with compat32}
 %files -n %{lib32name}
